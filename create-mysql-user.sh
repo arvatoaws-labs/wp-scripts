@@ -4,6 +4,9 @@ set -e
 if [ -n "$DB_HOST" ]; then
   MYSQL_HOST=$DB_HOST
 fi
+if [ -n "$DB_NAME" ]; then
+  MYSQL_DATABASE=$DB_NAME
+fi
 if [ -n "$DB_USER" ]; then
   MYSQL_USER=$DB_USER
 fi

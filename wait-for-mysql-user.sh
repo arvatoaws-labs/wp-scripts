@@ -12,6 +12,8 @@ if [ -n "$DB_PASSWORD" ]; then
 fi
 
 echo "waiting for mysql server..."
+echo "using host $MYSQL_HOST"
+echo "using user $MYSQL_USER"
 while ! mysqladmin status -h"$MYSQL_HOST" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" ; do
   sleep 1
   echo -n .

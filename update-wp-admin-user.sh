@@ -17,7 +17,7 @@ fi
 
 if [ "$WORDPRESS_EMAIL" = "" ]
 then
-   echo "please define WORDPRESS_BLOGNAME"
+   echo "please define WORDPRESS_EMAIL"
    exit 1
 fi
 

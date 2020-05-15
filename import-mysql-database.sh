@@ -1,6 +1,19 @@
 #!/bin/bash
 set -e
 
+if [ -n "$DB_HOST" ]; then
+  MYSQL_HOST=$DB_HOST
+fi
+if [ -n "$DB_NAME" ]; then
+  MYSQL_DATABASE=$DB_NAME
+fi
+if [ -n "$DB_USER" ]; then
+  MYSQL_USER=$DB_USER
+fi
+if [ -n "$DB_PASSWORD" ]; then
+  MYSQL_PASSWORD=$DB_PASSWORD
+fi
+
 if [ "$WP_IMPORT_DUMP" = "" ]
 then
    echo "please define WP_IMPORT_DUMP"

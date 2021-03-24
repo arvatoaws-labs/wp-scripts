@@ -6,8 +6,8 @@ then
    exit 1
 fi
 
-WP_CHECK_ARGS="--allow-root --debug"
-WP_ACTIVATE_ARGS="--allow-root --debug"
+WP_CHECK_ARGS="--allow-root"
+WP_ACTIVATE_ARGS="--allow-root"
 
 if [ "$WP_USE_MULTISITE" = "true" ]
 then

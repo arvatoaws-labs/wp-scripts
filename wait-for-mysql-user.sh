@@ -11,6 +11,22 @@ if [ -n "$DB_PASSWORD" ]; then
   MYSQL_PASSWORD=$DB_PASSWORD
 fi
 
+if [ "$MYSQL_HOST" = "" ]
+then
+   echo "please define MYSQL_HOST or DB_HOST"
+   exit 1
+fi
+if [ "$MYSQL_USER" = "" ]
+then
+   echo "please define MYSQL_USER or DB_USER"
+   exit 1
+fi
+if [ "$MYSQL_PASSWORD" = "" ]
+then
+   echo "please define MYSQL_PASSWORD or DB_PASSWORD"
+   exit 1
+fi
+
 echo "waiting for mysql server..."
 echo "using host $MYSQL_HOST"
 echo "using user $MYSQL_USER"

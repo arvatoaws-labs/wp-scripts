@@ -19,7 +19,6 @@ then
    echo "please define WP_IMPORT_DUMP"
    exit 1
 fi
-
 if [ "$WP_SITE_ID" = "" ]
 then
    echo "please define WP_SITE_ID"

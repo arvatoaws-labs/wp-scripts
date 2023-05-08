@@ -4,8 +4,8 @@ set -e
 if [[ -n "$STATUS_API_URL" && -n "$STATUS_API_KEY" ]]; then
   
 # Detect the PHP, WordPress, and Node.js versions
-PHP_VERSION=$(php -v | head -n 1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
-WP_VERSION=$(wp core version --skip-plugins --skip-themes --skip-packages | cut -d '.' -f 1,2)
+PHP_VERSION=$(php -v | head -n 1 | cut -d ' ' -f 2)
+WP_VERSION=$(wp core version --skip-plugins --skip-themes --skip-packages)
 
 # Set the JSON payload with versions and other info
 JSON_PAYLOAD=$(cat <<EOF

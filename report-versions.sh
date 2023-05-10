@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 #check if APP_STATUS_API and STATUS_API_KEY are not empty
-if [[ -n "$STATUS_API_URL" && -n "$STATUS_API_KEY" ]]; then
+if [[ -n "$VERSIONS_API_ENDPOINT" && -n "$VERSIONS_API_KEY" ]]; then
   
 # Detect the PHP, WordPress, and Node.js versions
 PHP_VERSION=$(php -v | head -n 1 | cut -d ' ' -f 2)
@@ -34,9 +34,9 @@ curl -X POST \
     --retry-delay 3 \
     --retry-max-time 18 \
     -H "Content-Type: application/json" \
-    -H "x-api-key: $STATUS_API_KEY" \
+    -H "x-api-key: $VERSIONS_API_KEY" \
     -d "$JSON_PAYLOAD" \
-       "$STATUS_API_URL"
+       "$VERSIONS_API_ENDPOINT"
 else
   wp core version --extra
   php -v

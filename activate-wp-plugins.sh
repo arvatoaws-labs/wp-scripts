@@ -14,8 +14,6 @@ then
    WP_ACTIVATE_ARGS="$WP_ACTIVATE_ARGS --network"
 fi
 
-cd /app
-
 for plugin in $WP_PLUGINS
 do
   echo "activating wp plugin $plugin..."

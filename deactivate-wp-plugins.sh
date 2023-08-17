@@ -6,8 +6,6 @@ then
    exit 1
 fi
 
-cd /app
-
 WP_PLUGINS_ACTIVE=$(timeout 10s wp plugin list | grep -v inactive | grep -v must-use | grep active | cut -f 1)
 
 for active_plugin in $WP_PLUGINS_ACTIVE

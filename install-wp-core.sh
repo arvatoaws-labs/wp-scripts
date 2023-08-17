@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-cd /app
-
 if [ "$WORDPRESS_USERNAME" = "" ]
 then
    echo "please define WORDPRESS_USERNAME"

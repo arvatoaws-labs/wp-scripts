@@ -12,6 +12,8 @@ if [[ "$WP_ENV" == "production" ]]; then
     STAGE="prod"
 elif [[ "$WP_ENV" == "staging" ]]; then
     STAGE="preprod"
+elif [[ "$WP_ENV" == "development" ]]; then
+    STAGE="dev"
 else
     STAGE="unknown"
 fi

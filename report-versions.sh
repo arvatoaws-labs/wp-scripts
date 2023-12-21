@@ -7,11 +7,23 @@ if [[ -n "$VERSIONS_API_ENDPOINT" && -n "$VERSIONS_API_KEY" ]]; then
 PHP_VERSION=$(php -v | head -n 1 | cut -d ' ' -f 2)
 WP_VERSION=$(wp core version --skip-plugins --skip-themes --skip-packages)
 
+ # Determine stage based on WP_ENV
+if [[ "$WP_ENV" == "production" ]]; then
+    STAGE="prod"
+elif [[ "$WP_ENV" == "staging" ]]; then
+    STAGE="preprod"
+elif [[ "$WP_ENV" == "development" ]]; then
+    STAGE="dev"
+else
+    STAGE="unknown"
+fi
+
 # Set the JSON payload with versions and other info
 JSON_PAYLOAD=$(cat <<EOF
 {
     "category": "wordpress",
     "domain": "$WP_FORCE_HOST",
+    "stage": "$STAGE",
     "products": [
         {
             "name": "php",

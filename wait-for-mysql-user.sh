@@ -35,7 +35,7 @@ echo "using host $MYSQL_HOST"
 echo "using user $MYSQL_USER"
 
 i=0
-while ! mysqladmin status -h"$MYSQL_HOST" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" ; do
+while ! mariadb-admin status -h"$MYSQL_HOST" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" ; do
   sleep 1
   echo -n .
   ((i++))

@@ -41,4 +41,4 @@ cat $TMPFILE >> $OUTFILE
 
 echo "importing dump file into mysql"
 
-mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST --default_character_set utf8 < $OUTFILE
+mariadb -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST --default_character_set utf8 < $OUTFILE

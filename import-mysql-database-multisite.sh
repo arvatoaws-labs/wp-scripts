@@ -48,4 +48,4 @@ cat $TMPFILE >> $OUTFILE
 
 echo "importing into database"
 
-mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST --default_character_set utf8 < $OUTFILE
+mariadb -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST --default_character_set utf8 < $OUTFILE

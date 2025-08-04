@@ -27,5 +27,5 @@ else
   echo "using host $MYSQL_HOST"
   echo "using user $MYSQL_ROOT_USER"
   echo "using database name $MYSQL_DATABASE"
-  mysql -u"$MYSQL_ROOT_USER" -p"$MYSQL_ROOT_PASSWORD" -h"$MYSQL_HOST" -se"CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;"
+  mariadb -u"$MYSQL_ROOT_USER" -p"$MYSQL_ROOT_PASSWORD" -h"$MYSQL_HOST" -se"CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;"
 fi
